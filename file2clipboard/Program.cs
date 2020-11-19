@@ -25,8 +25,9 @@ namespace file2clipboard
             StringCollection filePaths = new StringCollection();
             if (args.Length > 0)
             {
-                String filename = args[0];
-                filePaths.Add(filename);
+                foreach (string filename in args) {
+            	    filePaths.Add(filename);
+                }
                 Clipboard.Clear();
                 Clipboard.SetFileDropList(filePaths);
             }
